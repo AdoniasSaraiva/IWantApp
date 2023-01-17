@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="EndPoints\Categories\Response\" />
     <Folder Include="Infra\Data\" />
   </ItemGroup>
 
