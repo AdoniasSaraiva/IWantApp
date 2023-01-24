@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Utils\ServiceMsg.Designer.cs">
+    <Compile Update="Utils\Language\ServiceMsg.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ServiceMsg.resx</DependentUpon>
@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Utils\ServiceMsg.resx">
+    <EmbeddedResource Update="Utils\Language\ServiceMsg.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ServiceMsg.Designer.cs</LastGenOutput>
     </EmbeddedResource>

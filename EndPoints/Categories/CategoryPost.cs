@@ -1,6 +1,7 @@
 ﻿using IWantApp.Domain.Products;
 using IWantApp.EndPoints.Categories.Request;
 using IWantApp.Infra.Data;
+using IWantApp.Utils;
 
 namespace IWantApp.EndPoints.Categories;
 
@@ -15,7 +16,7 @@ public class CategoryPost
         var category = new Category(categoryRequest.Name, "teste", "teste");
 
         if (!category.IsValid)
-            return Results.BadRequest(category.Notifications);
+            return Results.ValidationProblem(category.Notifications.ConvertToProblemDetails());
 
         context.Categories.Add(category);
         context.SaveChanges();

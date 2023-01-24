@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IWantApp.Utils {
+namespace IWantApp.Utils.Language {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace IWantApp.Utils {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IWantApp.Utils.ServiceMsg", typeof(ServiceMsg).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IWantApp.Utils.Language.ServiceMsg", typeof(ServiceMsg).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -84,6 +84,15 @@ namespace IWantApp.Utils {
         public static string MSG0003 {
             get {
                 return ResourceManager.GetString("MSG0003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo {0} deve ter mais que {1} caracteres.
+        /// </summary>
+        public static string MSG0004 {
+            get {
+                return ResourceManager.GetString("MSG0004", resourceCulture);
             }
         }
     }

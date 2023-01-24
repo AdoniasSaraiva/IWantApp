@@ -126,4 +126,7 @@
   <data name="MSG0003" xml:space="preserve">
     <value>O campo EditedBy não deve ser nulo ou vazio</value>
   </data>
+  <data name="MSG0004" xml:space="preserve">
+    <value>O campo {0} deve ter mais que {1} caracteres</value>
+  </data>
 </root>
