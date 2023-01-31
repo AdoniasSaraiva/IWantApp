@@ -13,8 +13,9 @@ public static class ProblemDetailsExtensions
     }
     public static Dictionary<string, string[]> ConvertToProblemDetails(this IEnumerable<IdentityError> error)
     {
-        return error.GroupBy(g => g.Code)
-                            .ToDictionary(g => g.Key, g => g.Select(x => x.Description)
-                            .ToArray());
+        var dictionary = new Dictionary<string, string[]>();
+        dictionary.Add("Error", error.Select(e => e.Description).ToArray());
+
+        return dictionary;
     }
 }
