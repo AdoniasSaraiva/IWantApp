@@ -17,23 +17,65 @@ public class ConfigHelper
         return value;
     }
 
-    public static string SecretKey()
+
+    public static string SecretKey
     {
-        return GetConfig("SecretKey");
+        get
+        {
+            try
+            {
+                return GetConfig("SecretKey");
+            }
+            catch
+            {
+                return "A@fderwfQQSDXCCer34";
+            }
+        }
     }
 
-    public static string Audience()
+
+    public static string Audience
     {
-        return GetConfig("Audience");
+        get
+        {
+            try
+            {
+                return GetConfig("Audience");
+            }
+            catch
+            {
+                return "Audience";
+            }
+        }
     }
 
-    public static string Issuer()
+    public static string Issuer
     {
-        return GetConfig("Issuer");
+        get
+        {
+            try
+            {
+                return GetConfig("Issuer");
+            }
+            catch
+            {
+                return "IWantAppIssuer";
+            }
+        }
     }
 
-    public static int ExpiryTimeInSeconds()
+    public static int ExpiryTimeInSeconds
     {
-        return Convert.ToInt32(GetConfig("ExpiryTimeInSeconds"));
+        get
+        {
+            try
+            {
+                return Convert.ToInt32(GetConfig("ExpiryTimeInSeconds"));
+            }
+            catch
+            {
+                return 60;
+            }
+        }
     }
 }

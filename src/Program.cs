@@ -48,10 +48,10 @@ builder.Services.AddAuthentication(x =>
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
         ClockSkew = TimeSpan.Zero,
-        ValidIssuer = ConfigHelper.Issuer(),
-        ValidAudience = ConfigHelper.Audience(),
+        ValidIssuer = ConfigHelper.Issuer,
+        ValidAudience = ConfigHelper.Audience,
         IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(ConfigHelper.SecretKey()))
+            Encoding.UTF8.GetBytes(ConfigHelper.SecretKey))
     };
 });
 

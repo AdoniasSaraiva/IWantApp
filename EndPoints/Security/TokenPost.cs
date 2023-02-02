@@ -32,15 +32,15 @@ public class TokenPost
         });
         subject.AddClaims(claims);
 
-        var key = Encoding.ASCII.GetBytes(ConfigHelper.SecretKey());
+        var key = Encoding.ASCII.GetBytes(ConfigHelper.SecretKey);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = subject,
             SigningCredentials =
                 new SigningCredentials(
                     new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
-            Audience = ConfigHelper.Audience(),
-            Issuer = ConfigHelper.Issuer(),
+            Audience = ConfigHelper.Audience,
+            Issuer = ConfigHelper.Issuer,
             Expires = DateTime.UtcNow.AddMinutes(2)
         };
 
