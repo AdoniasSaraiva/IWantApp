@@ -1,3 +1,3 @@
 ﻿namespace IWantApp.EndPoints.Employees.Request;
 
-public record EmployeeRequest(string Email, string Passaword, string Name, string EmployeeCode);
+public record EmployeeRequest(string Email, string Password, string Name, string EmployeeCode);

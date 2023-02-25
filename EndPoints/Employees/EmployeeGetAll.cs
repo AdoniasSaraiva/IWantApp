@@ -1,9 +1,5 @@
-﻿using Dapper;
-using IWantApp.EndPoints.Employees.Response;
-using IWantApp.Helpers;
-using IWantApp.Infra.Data.Query;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Data.SqlClient;
+﻿using IWantApp.Infra.Data.Query;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IWantApp.EndPoints.Employees;
 
@@ -13,8 +9,10 @@ public class EmployeeGetAll
     public static string[] Methods => new string[] { HttpMethod.Get.ToString() };
     public static Delegate Handle => Action;
 
-    public static IResult Action(int? page, int? rows)
+    [Authorize(Policy = "EmployeePolicy")]
+    public static async Task<IResult> Action(int? page, int? rows)
     {
-        return Results.Ok(QueryAllUsersWithClaimName.Execute(page, rows));
+        var result = await QueryAllUsersWithClaimName.Execute(page, rows);
+        return Results.Ok(result);
     }
 }

@@ -8,7 +8,7 @@ namespace IWantApp.Infra.Data.Query;
 public static class QueryAllUsersWithClaimName
 {
 
-    public static IEnumerable<EmployeeResponse> Execute(int? page, int? rows)
+    public static async Task<IEnumerable<EmployeeResponse>> Execute(int? page, int? rows)
     {
         if (!page.HasValue || !rows.HasValue)
         {
@@ -28,6 +28,6 @@ public static class QueryAllUsersWithClaimName
                ORDER BY Name
                OFFSET(@page - 1) * @rows ROWS FETCH NEXT @rows ROWS ONLY";
 
-        return db.Query<EmployeeResponse>(query, new { page, rows });
+        return await db.QueryAsync<EmployeeResponse>(query, new { page, rows });
     }
 }
